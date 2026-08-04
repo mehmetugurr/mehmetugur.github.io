@@ -371,21 +371,19 @@ display:block;
 
 .hero h1{
 
-margin-top:28px;
+font-size:68px;
 
-font-size:52px;
+font-weight:800;
 
-font-weight:700;
+letter-spacing:2px;
 
-}
+margin-top:20px;
 
-.hero p{
+text-shadow:
 
-margin-top:12px;
+0 0 18px rgba(255,50,50,.6),
 
-font-size:20px;
-
-color:var(--text2);
+0 0 40px rgba(255,120,0,.35);
 
 }
 /*==================================================
@@ -1078,86 +1076,55 @@ opacity:1;
 
 }
 
-/*==================================================
-PROFILE RING
-==================================================*/
+/*==============================
+PROFILE
+==============================*/
 
 .profile-wrapper{
 
 position:relative;
 
-}
+width:200px;
 
-.profile-wrapper::before{
+height:200px;
 
-content:"";
+margin:0 auto 30px;
 
-position:absolute;
+display:flex;
 
-inset:-10px;
+justify-content:center;
 
-border-radius:50%;
+align-items:center;
 
-background:conic-gradient(
-
-from 0deg,
-
-transparent,
-
-#5FD7FF,
-
-transparent,
-
-#00AEEF,
-
-transparent
-
-);
-
-animation:rotateRing 6s linear infinite;
-
-z-index:-1;
-
-filter:blur(3px);
+animation:floating 5s ease-in-out infinite;
 
 }
-
-@keyframes rotateRing{
-
-to{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-/*==================================================
-PROFILE SHADOW
-==================================================*/
 
 .profile-image{
 
-transition:.4s;
+width:170px;
 
-}
+height:170px;
 
-.profile-wrapper:hover .profile-image{
+border-radius:50%;
 
-transform:scale(1.04);
+object-fit:cover;
 
-}
+position:relative;
 
-.profile-wrapper:hover{
+z-index:5;
+
+border:5px solid #ff3d3d;
 
 box-shadow:
 
-0 0 40px rgba(95,215,255,.5),
+0 0 25px rgba(255,60,60,.65),
 
-0 0 90px rgba(95,215,255,.35);
+0 0 60px rgba(255,120,0,.30);
+
+background:#111;
 
 }
-
 /*==================================================
 BUTTON ANIMATION
 ==================================================*/
@@ -1329,5 +1296,122 @@ text-shadow:
 0 0 15px rgba(255,70,70,.5),
 
 0 0 35px rgba(255,120,0,.3);
+
+}
+/*==============================
+ROTATING RINGS
+==============================*/
+
+.ring{
+
+position:absolute;
+
+border-radius:50%;
+
+pointer-events:none;
+
+}
+
+.ring1{
+
+width:195px;
+
+height:195px;
+
+border:3px dashed rgba(255,70,70,.8);
+
+animation:rotateLeft 14s linear infinite;
+
+}
+
+.ring2{
+
+width:225px;
+
+height:225px;
+
+border:2px dotted rgba(255,140,0,.7);
+
+animation:rotateRight 22s linear infinite;
+
+opacity:.9;
+
+}
+
+@keyframes rotateLeft{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes rotateRight{
+
+from{
+
+transform:rotate(360deg);
+
+}
+
+to{
+
+transform:rotate(0deg);
+
+}
+
+}
+@keyframes floating{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+25%{
+
+transform:translateY(-10px);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+75%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+.hero p{
+
+font-size:19px;
+
+color:#d5d5d5;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+margin-top:12px;
 
 }
