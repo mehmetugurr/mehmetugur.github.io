@@ -271,3 +271,35 @@ card.style.setProperty("--mouse-y",y+"px");
 });
 
 });
+/*==============================
+LIGHTNING EFFECT
+==============================*/
+
+const lightning = document.getElementById("lightning");
+
+function createLightning(){
+
+    if(!lightning) return;
+
+    lightning.style.transform =
+        `rotate(${Math.random()*25-12}deg)`;
+
+    lightning.classList.remove("flash");
+
+    void lightning.offsetWidth;
+
+    lightning.classList.add("flash");
+
+}
+
+function randomLightning(){
+
+    createLightning();
+
+    const next = 8000 + Math.random()*12000;
+
+    setTimeout(randomLightning,next);
+
+}
+
+setTimeout(randomLightning,5000);
