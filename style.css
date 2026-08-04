@@ -1205,3 +1205,74 @@ transition:.8s;
 left:150%;
 
 }
+/*==============================
+LIGHTNING
+==============================*/
+
+#lightning{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+opacity:0;
+
+z-index:2;
+
+background:
+linear-gradient(
+115deg,
+transparent 46%,
+rgba(120,220,255,.95) 49%,
+white 50%,
+rgba(120,220,255,.95) 51%,
+transparent 54%
+);
+
+filter:blur(2px);
+
+mix-blend-mode:screen;
+
+}
+
+#lightning.flash{
+
+animation:lightningFlash .35s ease;
+
+}
+
+@keyframes lightningFlash{
+
+0%{
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+20%{
+
+opacity:.25;
+
+}
+
+35%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+}
+
+}
